@@ -1,4 +1,4 @@
-import NewUrl from "./components/AddLongToShort/NewUrl";
+import NewUrl from "./components/addLongToShort/NewUrl";
 import LTSs from "./components/LongToShort/LTSs";
 import "./App.css";
 import { useState } from "react";
