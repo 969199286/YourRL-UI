@@ -10,17 +10,16 @@ const UrlForm = (props) => {
     if (enteredValue.trim().length > 0) {
       //console.log(enteredValue);
       props.onEnter(enteredValue);
-      }
-
+    }
   };
 
   return (
     <form onSubmit={submitHandler}>
       <label>
         Original Url:
-        <input type="text" name="url" ref={urlInputRef}/>
+        <input type="text" name="url" ref={urlInputRef} />
       </label>
-      <button type = "submit">Convert Url</button>
+      <button type="submit">Convert Url</button>
     </form>
   );
 };
