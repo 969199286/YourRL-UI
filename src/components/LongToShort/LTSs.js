@@ -1,5 +1,6 @@
 import SingleLongToShort from "./SingleLongToShort";
 import { v4 } from "uuid";
+import classes from "./LTS.module.css";
 
 const LTSs = (props) => {
   let LTSList = <h2>Convert your first URL!</h2>;
@@ -23,7 +24,7 @@ const LTSs = (props) => {
 
   return (
     <>
-      <div> {LTSList}</div>
+      <div className= {classes.container}> {LTSList}</div>
     </>
   );
 };
