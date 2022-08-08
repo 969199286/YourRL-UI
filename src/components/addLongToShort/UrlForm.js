@@ -16,7 +16,7 @@ const UrlForm = (props) => {
 
   return (
     <form className = {classes.container} onSubmit={submitHandler}>
-      <label>
+      <label className={classes.texts}>
         Original Url:
         <input type="text" name="url" ref={urlInputRef} />
       </label>

@@ -11,7 +11,7 @@ const LTSs = (props) => {
         {props.items.map((LTS) => (
           LTS.shortUrl.length !== 0 ? 
             <SingleLongToShort key={v4()}>
-              {LTS.longUrl}   http://localhost:8080/yourl/{LTS.shortUrl}
+              {LTS.longUrl}   http://localhost:8081/yourl/{LTS.shortUrl}
             </SingleLongToShort>
            : 
             <SingleLongToShort key={v4()}>
