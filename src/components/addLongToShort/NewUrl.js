@@ -21,20 +21,22 @@ const NewUrl = (props) => {
   const onEnterUrlHandler = (url) => {
     setError(null);
     app
-      .post(`http://localhost:8080/api/long2short`, url)
+      .post(`http://localhost:8081/api/long2short`, url)
       .then((res) => {
         createLongToShort(url, res.data);
 
       })
       .catch((res) => {
-        console.log(res.response.data)
+        if (res.response) {
+        console.log(res.response.data);
         setError(res.response.data);
+        }
       });
   };
 
   return (
     <>
-      <div>
+      <div className={classes.container}>
         <UrlForm onEnter={onEnterUrlHandler}></UrlForm>
       </div>
       {errorDiv}
