@@ -22,12 +22,21 @@ const Homepage = (props) => {
           : prevLTSitems.concat(LTSitem)
       );
     };
+    const LTSDeleteHandler = (longUrl) => {
+      let updatedLTSs = [];
+    for (let i = 0; i < LTSitems.length; i++) {
+      if (LTSitems[i].longUrl !== longUrl) {
+        updatedLTSs.push(LTSitems[i]);
+      }
+    }
+    setLTSitems([...updatedLTSs]);
+    }
     return (
       <div>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <NewUrl onAddLTS={LTSAddHandler}></NewUrl>
-          <LTSs items={LTSitems} />
+          <LTSs items={LTSitems}  onDeleteLTS={LTSDeleteHandler}/>
         </ThemeProvider>
       </div>
     );

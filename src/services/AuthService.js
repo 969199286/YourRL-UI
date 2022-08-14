@@ -19,6 +19,7 @@ class AuthService {
     }
     logout() {
       localStorage.removeItem("user");
+      localStorage.removeItem("google");
     }
     register(username, email, password) {
       return axios.post(API_URL + "signup", {
@@ -32,6 +33,9 @@ class AuthService {
     }
     getCurrentUser() {
       return JSON.parse(localStorage.getItem('user'));;
+    }
+    getOAuthUser() {
+      return localStorage.getItem('google');
     }
   }
   export default new AuthService();

@@ -69,14 +69,41 @@ export default class Login extends Component {
   }
   render() {
     return (
-      <div className="col-md-12">
-        <div className="card card-container">
+      <div
+        style={{
+          flex: 1,
+          alignContent: "center",
+          justifyContent: "center",
+        }}
+        className="col-md-12 row justify-content-center"
+      >
+        <div
+          style={{
+            alignItems: "center",
+            height: "100vh",
+            width: "70vw",
+            alignContent: "center",
+            justifyContent: "center",
+          }}
+          className="card card-container row justify-content-center"
+        >
           <img
+            style={{
+              flex: 1,
+              height: "50vh",
+              width: "25vw",
+              alignItems: "center",
+            }}
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             alt="profile-img"
             className="profile-img-card"
           />
           <Form
+            style={{
+              flex: 1,
+              height: "50vh",
+              width: "25vw",
+            }}
             onSubmit={this.handleLogin}
             ref={(c) => {
               this.form = c;
