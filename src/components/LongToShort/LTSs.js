@@ -5,18 +5,14 @@ import classes from "./LTS.module.css";
 const LTSs = (props) => {
   let LTSList = <h2>Convert your first URL!</h2>;
 
+  const deleteHandler = (longUrl) => {
+    props.onDeleteLTS(longUrl)
+  }
   if (props.items.length > 0) {
     LTSList = (
-      <ul>
+      <ul className="bg-white sm:rounded-lg" >
         {props.items.map((LTS) => (
-          LTS.shortUrl.length !== 0 ? 
-            <SingleLongToShort key={v4()}>
-              {LTS.longUrl}   http://localhost:8081/yourl/{LTS.shortUrl}
-            </SingleLongToShort>
-           : 
-            <SingleLongToShort key={v4()}>
-              {LTS.longUrl}   Invalid long URL
-            </SingleLongToShort>
+          <SingleLongToShort key={v4()} onDeleteHandler = {deleteHandler} longUrl={LTS.longUrl} shortUrl={LTS.shortUrl} />
         ))}
       </ul>
     );
@@ -24,7 +20,7 @@ const LTSs = (props) => {
 
   return (
     <>
-      <div className= {classes.container}> {LTSList}</div>
+      <div className={classes.container}> {LTSList}</div>
     </>
   );
 };

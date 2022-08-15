@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef} from "react";
 import { Button } from "@mui/material";
 import classes from "./UrlForm.module.css";
 const UrlForm = (props) => {
@@ -11,16 +11,17 @@ const UrlForm = (props) => {
     if (enteredValue.trim().length > 0) {
       //console.log(enteredValue);
       props.onEnter(enteredValue);
+      urlInputRef.current.value="";
     }
   };
 
   return (
-    <form className = {classes.container} onSubmit={submitHandler}>
+    <form className={classes.container} onSubmit={submitHandler}>
       <label className={classes.texts}>
         Original Url:
-        <input type="text" name="url" ref={urlInputRef} />
+        <input className="border border-black border-3" style={{ marginLeft:"10px"}} type="text" name="url" ref={urlInputRef} />
       </label>
-      <Button variant="contained" type="submit">
+      <Button style={{ marginLeft:"15px", marginBottom:"6px"}} variant="contained" type="submit">
         Convert Url
       </Button>
     </form>
