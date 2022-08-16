@@ -28,6 +28,9 @@ const NewUrl = (props) => {
         if (error.response && error.response.status === 401) {
           setErrorMsg("Please Login before converting your URL.");
         }
+        if (error.response && error.response.status === 429) {
+          setErrorMsg("Too fast, hold on!.");
+        }
       });
   };
 
